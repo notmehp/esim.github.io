@@ -9,13 +9,13 @@
 // 5. Thay đổi các giá trị dưới đây:
 
 const EMAILJS_CONFIG = {
-    serviceID: 'YOUR_SERVICE_ID',      // Thay bằng Service ID của bạn
-    templateID: 'YOUR_TEMPLATE_ID',    // Thay bằng Template ID của bạn
-    publicKey: 'YOUR_PUBLIC_KEY'       // Thay bằng Public Key của bạn
+    serviceID: 'service_mlgx3zf',      // Thay bằng Service ID của bạn
+    templateID: 'template_f9n2wtu',    // Thay bằng Template ID của bạn
+    publicKey: 'q0bUffy1PohykTmSJ'       // Thay bằng Public Key của bạn
 };
 
 // Email admin nhận thông báo
-const ADMIN_EMAIL = 'admin@aricoesim.com';  // Thay bằng email admin của bạn
+const ADMIN_EMAIL = 'admin@aricovn.com';  // Thay bằng email admin của bạn
 
 // ============================================
 // BẢNG GIÁ CÁC GÓI ESIM
