@@ -11,7 +11,7 @@
 const EMAILJS_CONFIG = {
     serviceID: 'service_mlgx3zf',      // Thay bằng Service ID của bạn
     templateID: 'template_f9n2wtu',    // Thay bằng Template ID của bạn
-    publicKey: 'q0bUffy1PohykTmSJ'       // Thay bằng Public Key của bạn
+    publicKey: 'r9OmuBarmH4VsUDpF'       // Thay bằng Public Key của bạn
 };
 
 // Email admin nhận thông báo
