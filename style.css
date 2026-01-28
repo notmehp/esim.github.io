@@ -1,0 +1,561 @@
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: #667eea;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.tagline {
+    font-size: 1.1em;
+    color: #666;
+    font-weight: 300;
+}
+
+/* ============================================
+   PROGRESS STEPS
+   ============================================ */
+.steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.3em;
+    transition: all 0.3s ease;
+}
+
+.step.active .step-number {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: scale(1.1);
+}
+
+.step-label {
+    font-size: 0.9em;
+    color: #666;
+    font-weight: 500;
+}
+
+.step.active .step-label {
+    color: #667eea;
+    font-weight: 700;
+}
+
+.step-line {
+    width: 100px;
+    height: 3px;
+    background: #e0e0e0;
+    margin: 0 20px;
+}
+
+/* ============================================
+   ORDER SECTION
+   ============================================ */
+.order-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.form-side,
+.payment-side {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+h2 {
+    color: #667eea;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.required {
+    color: #e74c3c;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+select.form-control {
+    cursor: pointer;
+    appearance: none;
+    background: white url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>') no-repeat right 15px center;
+    background-size: 20px;
+    padding-right: 45px;
+}
+
+textarea.form-control {
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* ============================================
+   QUANTITY CONTROLS
+   ============================================ */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qty-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+    font-size: 1.5em;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.qty-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: scale(1.05);
+}
+
+.qty-btn:active {
+    transform: scale(0.95);
+}
+
+.qty-input {
+    flex: 1;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+/* ============================================
+   SUMMARY BOX
+   ============================================ */
+.summary-box {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.summary-box h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 1em;
+}
+
+.summary-row.total {
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 2px solid rgba(102, 126, 234, 0.3);
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.total-amount {
+    color: #667eea;
+    font-size: 1.5em;
+}
+
+/* ============================================
+   PAYMENT BOX
+   ============================================ */
+.payment-box {
+    border: 2px dashed #667eea;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.payment-box h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.qr-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.qr-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bank-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row strong {
+    color: #555;
+}
+
+.highlight {
+    color: #667eea;
+    font-weight: 700;
+}
+
+.payment-note {
+    margin-top: 15px;
+    padding: 12px;
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #856404;
+}
+
+/* ============================================
+   SUBMIT BUTTON
+   ============================================ */
+.submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* ============================================
+   MODAL
+   ============================================ */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #667eea;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.modal-content p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    animation: scaleIn 0.5s ease;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.modal-content.success h2 {
+    color: #667eea;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.close-btn {
+    margin-top: 20px;
+    padding: 12px 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.05);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px 0;
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    color: #666;
+    font-size: 0.95em;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 20px 0;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 968px) {
+    .order-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .steps {
+        padding: 20px 15px;
+    }
+    
+    .step-line {
+        width: 50px;
+        margin: 0 10px;
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1em;
+    }
+    
+    .step-label {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 1.5em;
+    }
+    
+    .tagline {
+        font-size: 0.95em;
+    }
+    
+    .steps {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .step-line {
+        width: 3px;
+        height: 30px;
+        margin: 0;
+    }
+    
+    .form-side,
+    .payment-side {
+        padding: 20px;
+    }
+    
+    h2 {
+        font-size: 1.3em;
+    }
+    
+    .qr-image {
+        max-width: 250px;
+    }
+    
+    .modal-content {
+        margin: 20% auto;
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .summary-row {
+        font-size: 0.9em;
+    }
+    
+    .total-amount {
+        font-size: 1.3em;
+    }
+    
+    .submit-btn {
+        font-size: 1em;
+        padding: 15px;
+    }
+}

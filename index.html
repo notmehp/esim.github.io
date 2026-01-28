@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mua eSIM Du Lịch Quốc Tế - ARICO ESIM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>🌍 ARICO ESIM</h1>
+            <p class="tagline">eSIM Du Lịch Quốc Tế - Kết Nối Mọi Nơi</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Progress Steps -->
+        <div class="steps">
+            <div class="step active" id="step1">
+                <div class="step-number">1</div>
+                <div class="step-label">Chọn Gói</div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" id="step2">
+                <div class="step-number">2</div>
+                <div class="step-label">Thanh Toán</div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" id="step3">
+                <div class="step-number">3</div>
+                <div class="step-label">Hoàn Tất</div>
+            </div>
+        </div>
+
+        <!-- Order Form -->
+        <div class="order-section">
+            <div class="form-side">
+                <h2>📱 Chọn Gói eSIM</h2>
+                
+                <!-- Country Selection -->
+                <div class="form-group">
+                    <label for="country">Quốc gia / Khu vực</label>
+                    <select id="country" class="form-control">
+                        <option value="vietnam">🇻🇳 Việt Nam</option>
+                        <option value="japan">🇯🇵 Nhật Bản</option>
+                        <option value="korea">🇰🇷 Hàn Quốc</option>
+                        <option value="china">🇨🇳 Trung Quốc</option>
+                        <option value="thailand">🇹🇭 Thái Lan</option>
+                        <option value="singapore">🇸🇬 Singapore</option>
+                        <option value="europe">🇪🇺 Châu Âu</option>
+                        <option value="sea">🌏 Đông Nam Á</option>
+                        <option value="global">🌍 Toàn Cầu</option>
+                    </select>
+                </div>
+
+                <!-- Data Package Selection -->
+                <div class="form-group">
+                    <label for="package">Gói dung lượng</label>
+                    <select id="package" class="form-control">
+                        <option value="500" data-price="50000">500MB / ngày - 50,000đ</option>
+                        <option value="1000" data-price="80000">1GB / ngày - 80,000đ</option>
+                        <option value="2000" data-price="120000" selected>🔥 2GB / ngày - 120,000đ (Khuyên dùng)</option>
+                        <option value="3000" data-price="150000">3GB / ngày - 150,000đ</option>
+                        <option value="5000" data-price="200000">5GB / ngày - 200,000đ</option>
+                        <option value="unlimited" data-price="300000">Unlimited / ngày - 300,000đ</option>
+                    </select>
+                </div>
+
+                <!-- Number of Days -->
+                <div class="form-group">
+                    <label for="days">Số ngày sử dụng</label>
+                    <div class="quantity-control">
+                        <button type="button" class="qty-btn" onclick="decreaseValue('days')">−</button>
+                        <input type="number" id="days" class="qty-input" value="1" min="1" onchange="calculateTotal()">
+                        <button type="button" class="qty-btn" onclick="increaseValue('days')">+</button>
+                    </div>
+                </div>
+
+                <!-- Number of eSIMs -->
+                <div class="form-group">
+                    <label for="quantity">Số lượng eSIM</label>
+                    <div class="quantity-control">
+                        <button type="button" class="qty-btn" onclick="decreaseValue('quantity')">−</button>
+                        <input type="number" id="quantity" class="qty-input" value="1" min="1" onchange="calculateTotal()">
+                        <button type="button" class="qty-btn" onclick="increaseValue('quantity')">+</button>
+                    </div>
+                </div>
+
+                <hr>
+
+                <h2>👤 Thông Tin Người Mua</h2>
+
+                <!-- Customer Email -->
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" class="form-control" placeholder="email@example.com" required>
+                </div>
+
+                <!-- Customer Phone -->
+                <div class="form-group">
+                    <label for="phone">Số điện thoại <span class="required">*</span></label>
+                    <input type="tel" id="phone" class="form-control" placeholder="0912345678" required>
+                </div>
+
+                <!-- Notes -->
+                <div class="form-group">
+                    <label for="notes">Ghi chú</label>
+                    <textarea id="notes" class="form-control" rows="3" placeholder="Ghi chú thêm (không bắt buộc)..."></textarea>
+                </div>
+            </div>
+
+            <!-- Payment Side -->
+            <div class="payment-side">
+                <div class="summary-box">
+                    <h3>💰 Tổng Đơn Hàng</h3>
+                    
+                    <div class="summary-row">
+                        <span>Đơn giá:</span>
+                        <span id="unitPrice">120,000đ</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Số ngày:</span>
+                        <span id="displayDays">1 ngày</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Số lượng eSIM:</span>
+                        <span id="displayQuantity">1</span>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="summary-row total">
+                        <span>Tổng tiền:</span>
+                        <span id="totalPrice" class="total-amount">120,000đ</span>
+                    </div>
+                </div>
+
+                <div class="payment-box">
+                    <h3>💳 Thanh Toán Chuyển Khoản</h3>
+                    
+                    <div class="qr-container">
+                        <img id="qrCode" src="" alt="QR Code Thanh Toán" class="qr-image">
+                    </div>
+
+                    <div class="bank-info">
+                        <div class="info-row">
+                            <strong>Ngân hàng:</strong>
+                            <span>MB Bank</span>
+                        </div>
+                        <div class="info-row">
+                            <strong>Số tài khoản:</strong>
+                            <span>0931516579</span>
+                        </div>
+                        <div class="info-row">
+                            <strong>Chủ tài khoản:</strong>
+                            <span>ARICO ESIM</span>
+                        </div>
+                        <div class="info-row">
+                            <strong>Số tiền:</strong>
+                            <span id="paymentAmount" class="highlight">120,000đ</span>
+                        </div>
+                        <div class="info-row">
+                            <strong>Nội dung CK:</strong>
+                            <span id="paymentContent" class="highlight">ESIM + Mã đơn</span>
+                        </div>
+                    </div>
+
+                    <p class="payment-note">
+                        ⚠️ Vui lòng chuyển khoản chính xác số tiền và nội dung để được xử lý tự động
+                    </p>
+                </div>
+
+                <button type="button" class="submit-btn" onclick="submitOrder()">
+                    ✅ Hoàn Tất Đơn Hàng
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Modal -->
+    <div id="loadingModal" class="modal">
+        <div class="modal-content">
+            <div class="loader"></div>
+            <p>Vui lòng chờ đợi trong giây lát, đơn hàng của bạn đang được kiểm tra và hoàn tất.</p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success">
+            <div class="success-icon">✓</div>
+            <h2>Đơn Hàng Đã Được Gửi Thành Công!</h2>
+            <p>Chúng tôi sẽ liên hệ và gửi eSIM qua email trong thời gian sớm nhất.</p>
+            <button onclick="closeSuccessModal()" class="close-btn">Đóng</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ARICO ESIM - Kết nối mọi nơi trên thế giới</p>
+        </div>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
